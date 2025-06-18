@@ -49,15 +49,6 @@ with col1:
             return input_text
 
     video_id = extract_video_id(video_url)
-    # Support query parameters from Chrome Extension # added for the youtube extension
-    query_params = st.query_params
-    if "video_id" in query_params and "question" in query_params:
-        video_id = query_params["video_id"][0]
-        question = query_params["question"][0]
-        auto_trigger = True
-    else:
-        auto_trigger = False
-
     st.video(f"https://www.youtube.com/watch?v={video_id}")
 
 with col2:
